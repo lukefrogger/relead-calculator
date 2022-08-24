@@ -1,7 +1,7 @@
 {
-  "name": "calculator-2",
-  "version": "0.1.0",
-  "private": true,
+  "name": "calculator",
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@mantine/core": "^5.2.3",
