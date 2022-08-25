@@ -10,10 +10,8 @@ function App() {
   const [dealSize, setDealSize] = useState();
 
   useEffect(() => {
-    const potentialQualified = deals * (qualified/100) * .15;
-    console.log('pq', potentialQualified);
+    const potentialQualified = (deals * 4) * (qualified/100) * .15;
     const closeRatio = potentialQualified * (wins/100);
-    console.log('close ratio', closeRatio);
     if(!isNaN(closeRatio) && !isNaN(dealSize)) {
       const total = closeRatio * dealSize;
       setFinalNum(total.toFixed(2));
@@ -30,7 +28,7 @@ function App() {
           onChange={(val) => setDeals(val)} 
           size="md"
           min={0}
-          label="Number of all deals over the course of your company's history"
+          label="Number of Deals Won, Lost and Disqualified over the course of your company history."
           parser={(value) => value.replace(/%\s?|(,*)/g, '')}
           formatter={(value) =>
             !Number.isNaN(parseFloat(value))
